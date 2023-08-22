@@ -12,4 +12,3 @@ print(name.strip().replace("  ","").lower())
 sentence_one = "The Dog Breed is German Shepherd"
 print(sentence_one[8:23])
 
-sentence_two = "the Clinton forces, this was her moment of triumph" 
