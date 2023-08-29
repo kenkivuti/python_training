@@ -59,10 +59,12 @@ else:
 # after 100 units - ksh.100
 
 electricity_bill = int(input("enter your units : "))
-
+electricity_bill == 0
 if electricity_bill > 0 and electricity_bill <= 50 :
         print(electricity_bill*20, "ksh")
 elif electricity_bill > 50 and electricity_bill <= 100 :
         print(((electricity_bill-50)*40) + 1000,"kshs")
-else:
+elif electricity_bill > 100:
         print(((electricity_bill-100)*100)+ 3000,"kshs")
+else:
+        print("kshs.0")
