@@ -68,3 +68,6 @@ elif electricity_bill > 100:
         print(((electricity_bill-100)*100)+ 3000,"kshs")
 else:
         print("kshs.0")
+
+
+
