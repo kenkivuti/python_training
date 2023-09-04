@@ -7,9 +7,9 @@ today = datetime.now()
 dob = input("enter DOB (DD/MM/YYYY) : ")
 sdob = dob.split("/")
 
-if len(sdob) != 3 or int(sdob[0]) > 31 \
-   or int(sdob[1]) > 12 or int(sdob[2]) < 1900 \
-   or int(sdob[2]) > 2023 :
+if len(sdob) != 3 or int(sdob[0])<0 or int(sdob[0]) > 31 \
+   or int(sdob[1])<0 or int(sdob[1]) > 12 or int(sdob[2]) < 1900 \
+   or int(sdob[2]) > 2023:
     print("wrong date format")
 
 else:
