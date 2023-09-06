@@ -16,5 +16,10 @@ def add(x,y):
 
 print(add(1,2))
 
+def calculator(t1,t2):
+    x = t1 + t2
 
-gb = "tv"
+    return x 
+
+total = calculator(5,10)
+print(total)
