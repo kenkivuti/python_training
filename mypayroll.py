@@ -66,9 +66,9 @@ class Payroll():
     
     def fornssf(self,rate=0.06):
      if self.gross_sallary < 18000:
-      self.nssf = self.gross_sallary * 0.06
+      self.nssf = self.gross_sallary * rate
      else: 
-        self.nssf = 18000 * 0.06
+        self.nssf = 18000 * rate
      
 
      print("your nssf :" , self.nssf)
@@ -76,7 +76,11 @@ class Payroll():
 # nhdf
     
     def fornhdf(self,rate=0.015):
-      self.nhdf = self.gross_sallary * 0.015
+      self.nhdf = self.gross_sallary * rate
+      if self.nhdf<2500:
+       self.nhdf = self.gross_sallary * rate
+      else:
+          self.nhdf=2500   
 
       print("your nhdf : " , self.nhdf)
 
