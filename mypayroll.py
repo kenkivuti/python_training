@@ -1,6 +1,7 @@
 class Payroll():
     basic_salary=0
     benefit=0
+    content={}
 
     def __init__(self,basic_salary,benefit):
 
@@ -13,12 +14,13 @@ class Payroll():
         self.fortaxable_income()
         self.forpayee()
         self.fornet_salary()
+        self.add()
 
 
     def forgross_sallary(self):
         self.gross_sallary= float(self.basic_salary) + float(self.benefit)
 
-        print("your gross_sallary" ,self.gross_sallary)
+        
 
 
     # nhif
@@ -60,7 +62,7 @@ class Payroll():
            else:
                 self.nhif = 0
           
-           print("your nhif", self.nhif)
+       
 
     # nssf
     
@@ -71,7 +73,7 @@ class Payroll():
         self.nssf = 18000 * rate
      
 
-     print("your nssf :" , self.nssf)
+   
 
 # nhdf
     
@@ -82,14 +84,14 @@ class Payroll():
       else:
           self.nhdf=2500   
 
-      print("your nhdf : " , self.nhdf)
+   
 
 
 # taxableincome
     def fortaxable_income(self):
       self.taxable_income = self.gross_sallary - (self.nssf + self.nhdf)
   
-      print("your taxable income : " ,self.taxable_income)  
+      
                 
 # payee
 
@@ -106,7 +108,7 @@ class Payroll():
      else:
         self.payee = 0
 
-     print("your payee",self.payee)
+    
     
 
 # netsalary
@@ -114,8 +116,22 @@ class Payroll():
     def fornet_salary(self):
       self.net_salary = self.gross_sallary - (self.nhif + self.nhdf + self.nssf + self.payee)
   
-      print("your net_salary : " , self.net_salary)
+    
+#  gather the data into a dictionary
+
+    def add(self):
+        self.content["gross"]=self.gross_sallary
+        self.content["nhif"]=self.nhif
+        self.content["nssf"]=self.nssf
+        self.content["nhdf"]=self.nhdf
+        self.content["taxable_income"]=self.taxable_income
+        self.content["payee"]=self.payee
+        self.content["net_salary"]=self.net_salary
+
+        # print(self.content)
 
 
-calcgross= Payroll(input("enter your basic_salary : "),
+toinput= Payroll(input("enter your basic_salary : "),
                     input("enter your benefit : "))
+
+print(toinput.content)

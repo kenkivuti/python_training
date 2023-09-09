@@ -1,2 +1,7 @@
-print("ken")
-print(10*10 /2)
+def myfunc(n):
+ return n
+
+x = map(myfunc, ('apple', 'banana', 'cherry'))
+print(x)
+
+print(list(x))
